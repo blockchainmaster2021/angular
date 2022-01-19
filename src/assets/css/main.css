@@ -258,36 +258,6 @@ body::-webkit-scrollbar-thumb {
   border-bottom: 1px solid #222227;
   z-index: 101;
 }
-.header_top_position{
-  top:52px;
-}
-.header__content_metamask{
-  position: absolute;
-  left: 0;
-  top: -50px;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #16151a;
-  z-index: 3;
-  padding: 0 15px;
-  border-bottom: 1px solid #222227;
-  transition: top 0.5s ease;
-
-}
-.header__content_metamask .header__action-btn--signin {
-    background-color: #6164ff;
-    border-radius: 12px;
-    padding: 0 20px;
-}
-.header__content_metamask .header__action-btn span{
-  display: block;
-  margin-right: 0;
-  color: #fff;
-}
 .header__content {
   display: flex;
   flex-direction: row;
@@ -307,7 +277,7 @@ body::-webkit-scrollbar-thumb {
 }
 .header__logo img {
   width: auto;
-  height: 20px;
+  height: 40px;
   display: block;
 }
 .header__actions {
@@ -473,10 +443,6 @@ body::-webkit-scrollbar-thumb {
   transform: translate3d(281px, 0, 0);
   transition: transform 0.5s ease;
   border-left: 1px solid #222227;
-}
-.header_top_position .header__menu{
-  top: 122px;
-
 }
 .header__menu--active {
   transform: translate3d(0, 0, 0);
@@ -732,33 +698,10 @@ body::-webkit-scrollbar-thumb {
   pointer-events: auto;
   opacity: 1;
 }
-#connect_to_wallet .modal-body .main__title{
-  font-size: 20px;
-  margin:0px;
-}
-#connect_to_wallet.modal{
-max-width:480px;
-}
-#connect_to_wallet .modal-body{
-  text-align: center;
-}
-#connect_to_wallet .modal-body p{
-  margin: 20px;
-}
-#connect_to_wallet .modal-body .asset__btn{
-  margin: 0px;
-}
-
 @media (min-width: 576px) {
   .header__action--signin {
     width: auto;
     padding-left: 22px;
-  }
-  .header_top_position{
-    top:0px;
-  }
-  .header__content_metamask{
-    display: none;
   }
   .header__action--signin:before {
     content: '';
@@ -843,7 +786,7 @@ max-width:480px;
 @media (min-width: 1200px) {
   .header__logo {
     width: auto;
-    margin-right: 15px;
+    margin-right: 50px;
   }
   .header__btn {
     display: none;
@@ -918,7 +861,7 @@ max-width:480px;
     align-items: center;
     height: 70px;
     margin-bottom: 0;
-    margin-left: 25px;
+    margin-left: 30px;
   }
   .header__nav-menu {
     transform: translate3d(0px, 46px, 0px);
@@ -4679,7 +4622,7 @@ max-width:480px;
 }
 .footer__logo img {
   width: auto;
-  height: 54px;
+  height: 40px;
   display: block;
 }
 .footer__tagline {
@@ -4982,7 +4925,7 @@ max-width:480px;
 }
 .sign__logo img {
   width: auto;
-  height: 25px;
+  height: 50px;
 }
 .sign__title {
   font-size: 16px;

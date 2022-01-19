@@ -7,7 +7,6 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
@@ -18,15 +17,11 @@ export class JwtInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
 
     if (
-
-      request.url.includes(environment.API_BASE_URL) ||
-      request.url.includes(environment.IMG_BASE_URL)
-      // request.url.includes('https://memeexhibit.com/api') ||
-      // request.url.includes('https://api.memeexhibit.com') ||
-      // request.url.includes('http://localhost:3001') ||
-      // request.url.includes('http://localhost:3000') ||
-      // request.url.includes('http://15.207.100.113:3001') ||
-      // request.url.includes('http://147.182.187.164:3001')
+      request.url.includes('https://memeexhibit.com/api') ||
+      request.url.includes('https://api.memeexhibit.com') ||
+      request.url.includes('http://localhost:3001') ||
+      request.url.includes('http://localhost:3000') ||
+      request.url.includes('http://147.182.187.164:3001')
     ) {
       // append headers
       this.headers = new HttpHeaders();

@@ -89,7 +89,6 @@ export class CreateNftComponent implements OnInit {
           ] = `https://gateway.ipfs.io/ipfs/${result['path']}`;
           fianalJSON['status'] = `AVAILABLE`;
           fianalJSON['fileType'] = file.type;
-          console.log("account", self.connectService.account);
           fianalJSON['currentOwnerWalletAddress'] = self.connectService.account;
           self.utility.startLoader('Almost finished. Please wait...');
           self.createNFT(fianalJSON);

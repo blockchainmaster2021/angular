@@ -6,9 +6,9 @@ require('dotenv').config();
 
 export const environment = {
   production: false,
-  API_BASE_URL: 'http://15.207.100.113:3000/v1/',
-  IMG_BASE_URL: 'http://15.207.100.113:3000/',
-  CONTRACT_ADDRESS: '0x37ad23C5b727419E4C7405FB9DF7335F82aB8684',
+  API_BASE_URL: 'http://147.182.187.164:3001/v1/',
+  IMG_BASE_URL: 'http://147.182.187.164:3001/',
+  CONTRACT_ADDRESS: '0xaf49F92B39F22547BeaD17dDcfde18F1C662F3dD',
   OWNER_ADDRESS: '0x0cE1E760252Fd26c924c24F7f25b269B2b979c2A',
 };
 

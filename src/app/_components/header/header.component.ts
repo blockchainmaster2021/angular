@@ -3,9 +3,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { UtilityService, AuthenticationService, ConnectService, NftService } from '../../_services';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { connect } from 'http2';
 declare var $: any;
-declare let window:any;
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +20,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private nftService: NftService,
-    private connectService: ConnectService,
+    private connectService: ConnectService
   ) {}
 
   userName: string;
@@ -40,62 +38,19 @@ export class HeaderComponent implements OnInit {
   searchResults: any = [];
 
   async ngOnInit() {
-    console.log(localStorage.getItem('user'));
     this.searchForm = this.formBuilder.group({
       search: [Validators.required],
     });
     this.userName = JSON.parse(localStorage.getItem('user'))
-      ? JSON.parse(localStorage.getItem('user')) ['name']
+      ? JSON.parse(localStorage.getItem('user'))['name']
       : '';
     this.userRole = JSON.parse(localStorage.getItem('user'))
       ? JSON.parse(localStorage.getItem('user'))['role']
       : '';
-
-  //  this.walletAddres = await this.connectService.getAddress();
-  //  await this.connectService.connectWallet();
-
-  }
-  async connectToWallet(){
-    $('#connect_to_wallet').modal('hide');
-  //  this.walletAddres = await this.connectService.getAddress();
-   await this.connectService.connectWallet();
-   const connectflag = await this.connectService.isConnected();
-   if(connectflag) {
-    this.walletAddres = await (await this.connectService.getCurrentWalletConnected()).address;
-    this.connectService.getWalletProvider().on("chainChanged", () => {
-      this.handleChainChanged();
-    });
-   } else {
-    this.connectService.disConnectWallet();
-   }
-  };
-
-  disConnectWallet(){
-    this.connectService.disConnectWallet();
-    this.walletAddres = "";
-  }
-
-  async switchChain() {
-    try {
-      await this.connectService.getWalletProvider().request({
-         method: "wallet_switchEthereumChain",
-         params: [{ chainId: `0x${this.connectService.chainId}` }],
-     });
-    } catch (error) {
-      this.disConnectWallet();
-    }
-  }
-
-  async handleChainChanged() {
-    console.log("chain changed");
-    this.switchChain();
   }
 
   async ngAfterViewInit() {
-//    this.walletAddres = await this.connectService.getAddress();
-  }
-  connectWallet() {
-    $('#connect_to_wallet').modal('show');
+    this.walletAddres = await this.connectService.getAddress();
   }
 
   logoutAction() {
